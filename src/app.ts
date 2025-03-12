@@ -1,7 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-const port = 3000;
 
 
 const app: Application = express();
