@@ -9,7 +9,7 @@ import handelValidationError from "../errors/handelValidationError";
 import handelCastErrro from "../errors/handelCastError";
 import handelDuplicateError from "../errors/handleDuplicateError";
 import AppError from "../errors/appError";
-import { TErrorSource } from "../interface/error";
+import { TErrorSource } from "../errors/error.interface";
 
 
 const globalErrorHandler: ErrorRequestHandler = async (err, req, res, next): Promise<any> => {

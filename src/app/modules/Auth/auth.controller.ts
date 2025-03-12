@@ -17,10 +17,8 @@ const register = catchAsync(async (req, res) => {
 // LOGIN CONTROLLER
 const login = catchAsync(async (req, res) => {
     const result = await authService.loginUser(req.body);
-    // throw new Error('Error while login');
-
     // final response
-    sendResponse(res, {
+    return sendResponse(res, {
         statusCode: StatusCodes.OK,
         success: true,
         message: 'Login successful',

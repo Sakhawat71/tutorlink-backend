@@ -1,11 +1,11 @@
 import { StatusCodes } from "http-status-codes";
-import AppError from "../../errors/AppError";
 import { IUser } from "../User/user.interface";
 import { UserModel } from "../User/user.model";
 import { ILoginUser } from "./auth.interface";
 import bcrypt from 'bcrypt';    
 import config from "../../config";
 import jwt from 'jsonwebtoken';
+import AppError from "../../errors/appError";
 
 
 // register
@@ -54,7 +54,7 @@ const loginUser = async (payLoad: ILoginUser) => {
         JwtPayload,
         config.accessTokenSecret as string,
         {
-            expiresIn: config.accessTokenExpiry as string,
+            expiresIn: config.accessTokenExpiry as any,
         }
     );
 
