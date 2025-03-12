@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import route from './app/routes';
 
 
 const app: Application = express();
@@ -14,6 +15,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
+app.use("/api/v1", route);
+
 
 app.get('/', (req: Request, res: Response) => {
     res.send({

@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import AppError from "../../errors/appError";
+import AppError from "../../errors/AppError";
 import { IUser } from "../User/user.interface";
 import { UserModel } from "../User/user.model";
 import { ILoginUser } from "./auth.interface";
