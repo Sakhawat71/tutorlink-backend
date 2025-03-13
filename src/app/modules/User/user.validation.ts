@@ -11,9 +11,9 @@ const createUserValidation = z.object({
         password: z.string({ required_error: "Password is required" }),
 
         role: z.enum(
-            ["admin", "user"],
+            ["admin", "student","tutor"],
             { required_error: "Role is required" }
-        ).default("user"),
+        ).default("student"),
 
         isBlocked: z.boolean(
             { required_error: "isBlocked is required" }
