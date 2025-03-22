@@ -2,7 +2,7 @@ import { StatusCodes } from "http-status-codes";
 import { IUser } from "../User/user.interface";
 import { UserModel } from "../User/user.model";
 import { ILoginUser } from "./auth.interface";
-import bcrypt from 'bcrypt';    
+import bcrypt from 'bcrypt';
 import config from "../../config";
 import jwt from 'jsonwebtoken';
 import AppError from "../../errors/appError";
@@ -16,16 +16,16 @@ const registerUser = async (payLoad: IUser) => {
 // login
 const loginUser = async (payLoad: ILoginUser) => {
 
-    const {email, password} = payLoad;
+    const { email, password } = payLoad;
 
-    const user = await UserModel.findOne({email});
+    const user = await UserModel.findOne({ email });
     if (!user) {
         throw new AppError(
             StatusCodes.NOT_FOUND,
             "Invalid credentials"
         );
     };
-    
+
     // Check -> if user is Blocked
     if (user.isBlocked) {
         throw new AppError(
@@ -44,7 +44,8 @@ const loginUser = async (payLoad: ILoginUser) => {
     };
 
     const JwtPayload = {
-        userEmail: user.email,
+        email: user.email,
+        name : user.name,
         role: user.role,
         id: user._id,
     };
