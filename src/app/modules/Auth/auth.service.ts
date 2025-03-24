@@ -10,6 +10,12 @@ import AppError from "../../errors/appError";
 
 // register
 const registerUser = async (payLoad: IUser) => {
+
+    const { email } = payLoad;
+    const existingUser = await UserModel.findOne({ email });
+    if (existingUser) {
+        throw new AppError(StatusCodes.CONFLICT, "User with this email already exists");
+    };
     return await UserModel.create(payLoad);
 };
 
