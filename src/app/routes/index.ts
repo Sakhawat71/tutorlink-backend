@@ -8,6 +8,10 @@ const routersModule = [
     {
         path: '/auth',
         router: authRoute,
+    },
+    {
+        path : "/subject",
+        router : authRoute,
     }
 ];
 
