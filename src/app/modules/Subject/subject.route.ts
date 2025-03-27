@@ -9,5 +9,10 @@ route.get(
     subjectController.getSubjects
 );
 
+route.get(
+    "/:id",
+    subjectController.getSubjectById
+);
+
 
 export const subjectRoute = route;

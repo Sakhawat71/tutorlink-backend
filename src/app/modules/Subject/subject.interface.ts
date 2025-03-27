@@ -11,5 +11,4 @@ export interface ITutorSubject {
     hourlyRate: number;
     location: "Online" | "In-Person";
     availability: IAvailability[];
-    createdAt: Date;
-}
+};
