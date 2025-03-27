@@ -6,3 +6,6 @@ const route = Router();
 route.get(
     "/",
 );
+
+
+export const subjectRoute = route;
