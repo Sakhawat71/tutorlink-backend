@@ -15,6 +15,8 @@ const getSubjects = catchAsync(async (req: Request, res: Response) => {
     });
 });
 
+
+
 export const subjectController = {
     getSubjects,
-}
+};

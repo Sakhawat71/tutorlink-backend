@@ -11,7 +11,7 @@ const routersModule = [
         router: authRoute,
     },
     {
-        path : "/subject",
+        path : "/subjects",
         router : subjectRoute,
     }
 ];
