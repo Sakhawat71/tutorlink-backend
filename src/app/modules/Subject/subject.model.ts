@@ -57,14 +57,13 @@ const TutorSubjectSchema = new Schema<ITutorSubject>(
         }
     },
     {
-        timestamps: true, // Adds createdAt and updatedAt automatically
+        timestamps: true,
     }
 );
 
-// Pre-save hook (optional): Add custom logic if needed (e.g., validation)
+
 TutorSubjectSchema.pre("save", async function (next) {
     const subject = this as ITutorSubject & Document;
-    // Example: Ensure no duplicate subject for the same tutor (optional)
     const existing = await TutorSubjectModel.findOne({
         tutorId: subject.tutorId,
         subject: subject.subject,
@@ -75,10 +74,9 @@ TutorSubjectSchema.pre("save", async function (next) {
     next();
 });
 
-// Post-save hook: Sanitize response (optional, e.g., remove sensitive fields)
-TutorSubjectSchema.post("save", function (doc, next) {
-    // No sensitive fields to remove here, but keeping structure consistent
-    next();
-});
+
+// TutorSubjectSchema.post("save", function (doc, next) {
+//     next();
+// });
 
 export const TutorSubjectModel = model<ITutorSubject>("TutorSubject", TutorSubjectSchema);
