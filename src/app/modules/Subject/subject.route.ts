@@ -14,5 +14,9 @@ route.get(
     subjectController.getSubjectById
 );
 
+route.post(
+    "/create-subject",
+    subjectController.createSubject
+);
 
 export const subjectRoute = route;

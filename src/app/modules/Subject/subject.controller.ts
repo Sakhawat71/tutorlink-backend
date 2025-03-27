@@ -33,7 +33,7 @@ const createSubject = catchAsync(async (req : Request, res : Response) => {
     sendResponse(res, {
         statusCode: StatusCodes.CREATED,
         success: true,
-        message: "Subject created successfully",
+        message: "Subject Created Successfully",
         data: result,
     });
 
@@ -44,5 +44,5 @@ export const subjectController = {
     getSubjects,
     getSubjectById,
     createSubject,
-    
+
 };
