@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ErrorRequestHandler } from "express";
 import { ZodError } from "zod";
 import config from "../config";
@@ -8,8 +5,8 @@ import { handelZodError } from "../errors/handelZodError";
 import handelValidationError from "../errors/handelValidationError";
 import handelCastErrro from "../errors/handelCastError";
 import handelDuplicateError from "../errors/handleDuplicateError";
-import AppError from "../errors/appError";
 import { TErrorSource } from "../errors/error.interface";
+import AppError from "../errors/appError";
 
 
 const globalErrorHandler: ErrorRequestHandler = async (err, req, res, next): Promise<any> => {
