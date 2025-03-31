@@ -1,3 +1,5 @@
+import { Types } from "mongoose";
+
 export interface IAvailability {
     day: "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday";
     startTime: string; // e.g., "10:00"
@@ -5,7 +7,7 @@ export interface IAvailability {
 }
 
 export interface ITutorSubject {
-    tutorId: string;
+    tutor: Types.ObjectId | string;
     description: string;
     subject: string;
     hourlyRate: number;

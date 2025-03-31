@@ -2,11 +2,15 @@ import { ITutorSubject } from "./subject.interface";
 import { TutorSubjectModel } from "./subject.model";
 
 const getSubjectsFormDB = async () => {
-    return await TutorSubjectModel.find();
+    return await TutorSubjectModel
+    .find()
+    .populate("tutor");
 };
 
 const getSubjectsByIdFormDB = async (id: string) => {
-    return await TutorSubjectModel.findById(id);
+    return await TutorSubjectModel
+    .findById(id)
+    .populate("tutor");
 };
 
 const createSubjectInDB = async (data : ITutorSubject) => {

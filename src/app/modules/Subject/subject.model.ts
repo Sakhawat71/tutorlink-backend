@@ -1,4 +1,4 @@
-import { model, Schema, Document } from "mongoose";
+import mongoose, { model, Schema, Document } from "mongoose";
 import { IAvailability, ITutorSubject } from "./subject.interface";
 
 const AvailabilitySchema = new Schema<IAvailability>({
@@ -21,10 +21,10 @@ const AvailabilitySchema = new Schema<IAvailability>({
 
 const TutorSubjectSchema = new Schema<ITutorSubject>(
     {
-        tutorId: {
-            type: String,
+        tutor: {
+            type: mongoose.Schema.Types.ObjectId,
             required: [true, "Tutor ID is required"],
-            index: true, // Index for faster queries by tutorId
+            ref: "User",
         },
         description: {
             type: String,
@@ -65,7 +65,7 @@ const TutorSubjectSchema = new Schema<ITutorSubject>(
 TutorSubjectSchema.pre("save", async function (next) {
     const subject = this as ITutorSubject & Document;
     const existing = await TutorSubjectModel.findOne({
-        tutorId: subject.tutorId,
+        tutor: subject.tutor,
         subject: subject.subject,
     });
     if (existing) {
