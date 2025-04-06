@@ -5,6 +5,7 @@ export interface IUser {
     password: string;
     role: 'admin' | 'student' | 'tutor';
     isBlocked: boolean;
+    availability : boolean;
     createdAt?: Date;
     updatedAt?: Date;
 };

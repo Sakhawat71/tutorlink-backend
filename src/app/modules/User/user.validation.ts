@@ -11,13 +11,15 @@ const createUserValidation = z.object({
         password: z.string({ required_error: "Password is required" }),
 
         role: z.enum(
-            ["admin", "student","tutor"],
+            ["admin", "student", "tutor"],
             { required_error: "Role is required" }
         ).default("student"),
 
         isBlocked: z.boolean(
             { required_error: "isBlocked is required" }
         ).default(false),
+
+        availability: z.boolean().optional().default(true),
     }),
 });
 
@@ -28,6 +30,7 @@ const updateUserValidation = z.object({
         password: z.string().optional(),
         role: z.enum(["admin", "user"]).optional(),
         isBlocked: z.boolean().optional(),
+        availability: z.boolean().optional().default(true),
     }),
 });
 
