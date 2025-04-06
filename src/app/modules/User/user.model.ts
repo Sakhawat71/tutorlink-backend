@@ -10,7 +10,7 @@ const userSchema = new Schema<IUser>(
         password: { type: String, required: true },
         role: { type: String, enum: ["admin", "student", "tutor"], default: "student" },
         isBlocked: { type: Boolean, default: false },
-        availability: { type: Boolean, default: true },
+        available: { type: Boolean, default: true },
     },
     {
         timestamps: true

@@ -19,7 +19,7 @@ const createUserValidation = z.object({
             { required_error: "isBlocked is required" }
         ).default(false),
 
-        availability: z.boolean().optional().default(true),
+        available: z.boolean().optional().default(true),
     }),
 });
 
@@ -30,7 +30,7 @@ const updateUserValidation = z.object({
         password: z.string().optional(),
         role: z.enum(["admin", "user"]).optional(),
         isBlocked: z.boolean().optional(),
-        availability: z.boolean().optional().default(true),
+        available: z.boolean().optional().default(true),
     }),
 });
 
