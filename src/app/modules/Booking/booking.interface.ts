@@ -7,7 +7,6 @@ export interface ITime {
 };
 
 export interface IBooking {
-    id: string;
     student: Types.ObjectId | string;
     tutor: Types.ObjectId | string;
     subject: Types.ObjectId | string;
