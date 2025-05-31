@@ -149,29 +149,3 @@ npm run build
 
 ---
 
-## 🤝 Contributing
-
-Feel free to submit issues and pull requests. Let's build this together! 🚀
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 🌟 Acknowledgments
-
-Thanks to the **Apollo-Level2-Web-Dev** community for providing this project challenge!
-
----
-
-## 📞 Contact
-
-For queries, reach out at:
-
-- **GitHub:** [your-github-profile](https://github.com/yourusername)
-- **Portfolio:** [your-portfolio-link](https://your-portfolio.com)
-- **Email:** [your-email@example.com](mailto\:your-email@example.com)
-
