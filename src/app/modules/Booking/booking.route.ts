@@ -1,12 +1,31 @@
-import express from "express";
+import { Router } from "express";
 import { BookingController } from "./booking.controller";
 
-const router = express.Router();
+const router = Router();
 
-router.post("/", BookingController.createBooking);
-router.get("/", BookingController.getAllBookings);
-router.get("/:id", BookingController.getBookingById);
-router.patch("/:id/status", BookingController.updateStatus);
-router.delete("/:id", BookingController.deleteBooking);
+router.get(
+    "/",
+    BookingController.getAllBookings
+);
+
+// router.get(
+//     "/:id",
+//     BookingController.getBookingById
+// );
+
+router.post(
+    "/",
+    BookingController.createBooking
+);
+
+router.patch(
+    "/:id/status",
+    BookingController.updateStatus
+);
+
+router.delete(
+    "/:id",
+    BookingController.deleteBooking
+);
 
 export const bookingRoute = router;

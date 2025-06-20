@@ -11,7 +11,8 @@ const app: Application = express();
 const corsOptions = {
     origin: [
         "http://localhost:3000",
-        "https://tutorlink-frontend-s3h.vercel.app"
+        "https://tutorlink-frontend-s3h.vercel.app",
+        "https://tutorlink-s3h.vercel.app"
     ],
     credentials: true,
 };
