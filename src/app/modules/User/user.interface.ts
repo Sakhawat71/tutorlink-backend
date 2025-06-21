@@ -4,8 +4,9 @@ export interface IUser {
     email: string;
     password: string;
     role: 'admin' | 'student' | 'tutor';
+    isCompleteProfile: boolean;
     isBlocked: boolean;
-    available : boolean;
+    available?: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 };
