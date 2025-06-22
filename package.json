@@ -1,13 +1,11 @@
 {
   "name": "tutorlink-backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node dist/server.js",
-    "tsdev": "nodemon dist/server.js",
-    "dev": "tsnd --respawn src/server.ts",
     "build": "tsc",
-    "prod": "node dist/server.js",
+    "start": "node dist/server.js",
+    "dev": "nodemon dist/server.js",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "npx eslint src/**/*.ts --fix",
     "test": "echo \"Error: no test specified\" && exit 1"

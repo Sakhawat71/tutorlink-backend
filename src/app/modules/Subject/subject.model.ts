@@ -1,5 +1,5 @@
 import mongoose, { model, Schema, Document } from "mongoose";
-import { IAvailability, ITutorSubject } from "./subject.interface";
+import { IAvailability, ITutorProfile } from "./subject.interface";
 
 const AvailabilitySchema = new Schema<IAvailability>({
     day: {
@@ -19,7 +19,7 @@ const AvailabilitySchema = new Schema<IAvailability>({
     },
 });
 
-const TutorSubjectSchema = new Schema<ITutorSubject>(
+const TutorSubjectSchema = new Schema<ITutorProfile>(
     {
         tutor: {
             type: mongoose.Schema.Types.ObjectId,
@@ -63,7 +63,7 @@ const TutorSubjectSchema = new Schema<ITutorSubject>(
 
 
 TutorSubjectSchema.pre("save", async function (next) {
-    const subject = this as ITutorSubject & Document;
+    const subject = this as ITutorProfile & Document;
     const existing = await TutorSubjectModel.findOne({
         tutor: subject.tutor,
         subject: subject.subject,
@@ -79,4 +79,4 @@ TutorSubjectSchema.pre("save", async function (next) {
 //     next();
 // });
 
-export const TutorSubjectModel = model<ITutorSubject>("TutorSubject", TutorSubjectSchema);
+export const TutorSubjectModel = model<ITutorProfile>("TutorSubject", TutorSubjectSchema);

@@ -6,7 +6,7 @@ export interface IAvailability {
     endTime: string;   // e.g., "12:00"
 }
 
-export interface ITutorSubject {
+export interface ITutorProfile {
     tutor: Types.ObjectId | string;
     description: string;
     subject: string;

@@ -1,4 +1,4 @@
-import { ITutorSubject } from "./subject.interface";
+import { ITutorProfile } from "./subject.interface";
 import { TutorSubjectModel } from "./subject.model";
 
 const getSubjectsFormDB = async () => {
@@ -21,7 +21,7 @@ const getSubjectsByIdFormDB = async (id: string) => {
 
 };
 
-const createSubjectInDB = async (data: ITutorSubject) => {
+const createSubjectInDB = async (data: ITutorProfile) => {
     return await TutorSubjectModel.create(data);
 };
 
